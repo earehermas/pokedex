@@ -2,8 +2,8 @@
   text-align: center;
 }
 body {
-  background-image: url("https://images.unsplash.com/photo-1542779283-429940ce8336?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
-  background-size: 150%;
+  background-image: url("https://steamuserimages-a.akamaihd.net/ugc/112984151332272044/0979BF576B2C5A1F954F5F5CF1C08977936EA0D9/");
+  background-size: 100%;
 }
 
 /* DivTable.com */
@@ -18,7 +18,7 @@ body {
   display: table-row;
 }
 .divTableHeading {
-  background-color: #eee;
+  background-color: #000;
   display: table-header-group;
 }
 .divTableCell,
@@ -28,12 +28,12 @@ body {
   padding: 3px 10px;
 }
 .divTableHeading {
-  background-color: #eee;
+  background-color: #000;
   display: table-header-group;
   font-weight: bold;
 }
 .divTableFoot {
-  background-color: #eee;
+  background-color: #000;
   display: table-footer-group;
   font-weight: bold;
 }
@@ -42,13 +42,13 @@ body {
 }
 
 .divTableCell:nth-child(odd) {
-  background-color: gainsboro;
+  background-color: #000;
 }
 
 .container {
   display: flex;
   opacity: 0.9;
-  background-color: whitesmoke;
+  background-color: #000;
   justify-content: center;
 }
 

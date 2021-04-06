@@ -26,7 +26,6 @@ const App = () => {
       console.log(e);
     }
   };
-  console.log(pokemonData);
 
   return (
     <div className="App">
@@ -39,8 +38,7 @@ const App = () => {
           />
         </label>
       </form>
-      {/* <ul>{pokemonData}</ul> */}
-      {/* <p>{[pokemonData]}</p> */}
+
       {pokemonData.map((data) => {
         return (
           <div className="container">
@@ -79,22 +77,3 @@ const App = () => {
 };
 
 export default App;
-// const toArray = [];
-// try {
-//   const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
-//   const pokeDesc = `https://pokeapi.co/api/v2/ability/${pokemon}`;
-
-//   const resPokemon = await axios.get(url);
-//   const resPokemonEtc = await axios.get(pokeDesc);
-
-//   axios.all([resPokemon, resPokemonEtc]).then(
-//     axios.spread((...allData) => {
-//       console.log(allData);
-//     })
-//   );
-//   // console.log(res);
-//   toArray.push(res.data);
-//   setPokemonData(toArray);
-// } catch (e) {
-//   console.log(e);
-// }
