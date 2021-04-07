@@ -6,45 +6,6 @@ body {
   background-size: 100%;
 }
 
-/* DivTable.com */
-.divTable {
-  display: table;
-  max-width: 20em;
-  float: right;
-  display: flex;
-  align-items: center;
-}
-.divTableRow {
-  display: table-row;
-}
-.divTableHeading {
-  background-color: #000;
-  display: table-header-group;
-}
-.divTableCell,
-.divTableHead {
-  border: 1px solid #999999;
-  display: table-cell;
-  padding: 3px 10px;
-}
-.divTableHeading {
-  background-color: #000;
-  display: table-header-group;
-  font-weight: bold;
-}
-.divTableFoot {
-  background-color: #000;
-  display: table-footer-group;
-  font-weight: bold;
-}
-.divTableBody {
-  display: table-row-group;
-}
-
-.divTableCell:nth-child(odd) {
-  background-color: #000;
-}
-
 .container {
   display: flex;
   opacity: 0.9;
