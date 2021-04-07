@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import Search from "../components/molecules/Search/index";
+import SearchInput from "../components/molecules/SearchInput/index";
+import Pokemons from "../components/organisms/Pokemons";
 import axios from "axios";
 
 const Pokedex = () => {
-  const [pokemon, setPokemon] = useState("pikachu");
+  const [pokemon, setPokemon] = useState("");
   const [pokemonData, setPokemonData] = useState([]);
-  const [pokemonType, setPokemonType] = useState("");
+  // const [pokemonType, setPokemonType] = useState("");
 
   const handleChange = (e) => {
     setPokemon(e.target.value.toLowerCase());
@@ -20,16 +21,24 @@ const Pokedex = () => {
       const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
       const res = await axios.get(url);
       toArray.push(res.data);
-      setPokemonType(res.data.types[0].type.name);
+      // setPokemonType(res.data.types[0].type.name);
       setPokemonData(toArray);
     } catch (e) {
       console.log(e);
     }
   };
-  console.log("pokemon", pokemonData);
+  console.log("pokemonDataFromApi", pokemonData);
 
   return (
-    pokemonData && <Search onSubmit={handleSubmit} onChange={handleChange} />
+    <>
+      <SearchInput
+        onSubmit={handleSubmit}
+        onChange={handleChange}
+        placeholder={"Search Pokémon"}
+        type={"text"}
+      />
+      <Pokemons pokemonData={pokemonData} />
+    </>
   );
 };
 
