@@ -1,10 +1,11 @@
 import React from "react";
-import Pokedex from "../actions/Pokedex";
-import Header from "../components/atoms/Header/index";
+import PokemonsList from "../components/organisms/PokemonsList/PokemonsList.index";
+import PokemonsSearch from "../components/organisms/PokemonsSearch/PokemonsSearch.index";
 function Home() {
   return (
     <>
-      <Header /> <Pokedex />
+      <PokemonsSearch />
+      <PokemonsList />
     </>
   );
 }
