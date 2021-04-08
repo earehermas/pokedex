@@ -1,32 +1,31 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
-export const Wrapper = styled.div`
-  overflow: hidden;
-  padding: 0 0 32px;
-  margin: 48px auto 0;
-  width: 300px;
-  font-family: Quicksand, arial, sans-serif;
+export const CardContainer = styled.div`
   background: #fff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0px 40px rgba(0, 0, 0, 0.08);
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: auto;
   border-radius: 5px;
+  padding: 5px;
+  box-shadow: 0 2px 6px 0;
+  width: 15%;
+  height: 300px;
 `;
 
-export const Header = styled.header`
-  padding-top: 32px;
+export const CardTitle = styled.div`
+  color: #000;
+  padding-top: 30px;
   padding-bottom: 32px;
   font-size: 24px;
   font-weight: bold;
   text-align: center;
 `;
 
-export const Heading = styled.h1`
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-`;
-
-export const Body = styled.div`
-  padding-right: 32px;
-  padding-left: 32px;
+export const CardContent = styled.div`
+  display: flex;
+  align-items: flex-start;
+  padding: 8px 12px;
 `;

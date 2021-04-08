@@ -1,12 +1,15 @@
 import React from "react";
-import PokemonsList from "../components/organisms/PokemonsList/PokemonsList.index";
-import PokemonsSearch from "../components/organisms/PokemonsSearch/PokemonsSearch.index";
+import Button from "../components/atoms/Button/Button.index";
+import PageContent from "../components/atoms/PageContent/PageContent.index";
+import Link from "../components/atoms/Link/Link.index";
+
 function Home() {
   return (
-    <>
-      <PokemonsSearch />
-      <PokemonsList />
-    </>
+    <PageContent>
+      <Button>
+        <Link to="/pokemons">LET'S GO</Link>
+      </Button>
+    </PageContent>
   );
 }
 

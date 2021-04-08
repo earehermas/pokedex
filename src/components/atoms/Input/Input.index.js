@@ -1,19 +1,10 @@
-import React from "react";
-import { Fieldset, Field } from "./style";
+import styled from "styled-components";
 
-function Input(props) {
-  return (
-    <div className="input">
-      <Fieldset>
-        <Field
-          type={props.type}
-          onChange={props.onChange}
-          placeholder={props.placeholder}
-          label={props.label}
-        />
-      </Fieldset>
-    </div>
-  );
-}
+const Input = styled.input`
+  width: auto;
+  margin: 30;
+  padding: 10;
+  font-size: 20px;
+`;
 
 export default Input;

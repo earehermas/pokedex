@@ -1,14 +1,13 @@
 import React from "react";
-import { Wrapper, Header, Heading, Body } from "./style";
-function Card(props) {
+import { CardTitle, CardContainer, CardContent } from "./Card.style";
+
+const Card = (props) => {
   return (
-    <div className="App">
-      <Wrapper>
-        <Header>{props.cardHeader}</Header>
-        <Body>{props.cardBody} </Body>
-      </Wrapper>
-    </div>
+    <CardContainer>
+      <CardTitle>{props.title}</CardTitle>
+      <CardContent>{props.children}</CardContent>
+    </CardContainer>
   );
-}
+};
 
 export default Card;

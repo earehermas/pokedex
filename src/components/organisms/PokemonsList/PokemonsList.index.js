@@ -1,9 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchAll, resetData } from "../../../redux/actions/root";
-
 import pokeball from "../../../img/pokeball.gif";
-
+import Card from "../../atoms/Card/Card.index";
+import Link from "../../atoms/Link/Link.index";
 function PokemonsList({
   fetchAll,
   resetData,
@@ -15,6 +15,7 @@ function PokemonsList({
 }) {
   const filteredPokemons = pokemons.filter((pk) => pk.name.includes(filter));
   console.log("filteredPokemons", pokemons);
+
   return (
     <>
       <div>
@@ -26,11 +27,7 @@ function PokemonsList({
             Reset
           </button>
           <div>
-            {error ? (
-              <span>Something bad happened: {error.message}</span>
-            ) : (
-              <span>YEAH</span>
-            )}
+            {error ? <span>Something bad happened: {error.message}</span> : ""}
           </div>
         </div>
       </div>
@@ -41,7 +38,13 @@ function PokemonsList({
             <div>Catching...</div>
           </>
         ) : (
-          filteredPokemons.map((pokemon, i) => <div>{pokemon.name}</div>)
+          filteredPokemons.map((pokemon, i) => (
+            <Card
+              title={<Link to={`/pokemon/${pokemon.id}`}>{pokemon.name}</Link>}
+            >
+              click
+            </Card>
+          ))
         )}
       </div>
     </>
