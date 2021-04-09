@@ -4,6 +4,7 @@ import { fetchAll, resetData } from "../../../redux/actions/root";
 import pokeball from "../../../img/pokeball.gif";
 import Card from "../../atoms/Card/Card.index";
 import Link from "../../atoms/Link/Link.index";
+import PokemonPreviewCard from "../../molecules/PokemonPreviewCard/PokemonPreviewCard.index";
 function PokemonsList({
   fetchAll,
   resetData,
@@ -14,7 +15,6 @@ function PokemonsList({
   error,
 }) {
   const filteredPokemons = pokemons.filter((pk) => pk.name.includes(filter));
-  console.log("filteredPokemons", pokemons);
 
   return (
     <>
@@ -39,11 +39,10 @@ function PokemonsList({
           </>
         ) : (
           filteredPokemons.map((pokemon, i) => (
-            <Card
-              title={<Link to={`/pokemon/${pokemon.id}`}>{pokemon.name}</Link>}
-            >
-              click
-            </Card>
+            <PokemonPreviewCard
+              key={pokemon.name}
+              pokemon={pokemon}
+            ></PokemonPreviewCard>
           ))
         )}
       </div>

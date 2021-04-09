@@ -1,4 +1,6 @@
 import React from "react";
+import Card from "../../atoms/Card/Card.index";
+import Link from "../../atoms/Link/Link.index";
 // import Types from './Types';
 
 export default function PokemonPreviewCard({ pokemon }) {
@@ -7,17 +9,7 @@ export default function PokemonPreviewCard({ pokemon }) {
 
   return (
     <Link to={`/pokemon/${id}`}>
-      <Card>
-        <CardActionArea>
-          <CardMedia className={classes.media} image={sprite} />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              {name}
-            </Typography>
-            {/* {types ? <Types types={types} /> : ''} */}
-          </CardContent>
-        </CardActionArea>
-      </Card>
+      <Card>{name}</Card>
     </Link>
   );
 }
