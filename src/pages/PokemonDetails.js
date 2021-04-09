@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { setPokemon } from "../redux/actions/root";
 import { useParams, Redirect } from "react-router-dom";
 import { loadMoves } from "../redux/actions/pokemon";
-import PokemonCard from "../components/molecules/PokemonCard/PokemonCard.index";
+import PokemonCard from "../components/organisms/PokemonCard/PokemonCard.index";
 
 const PokemonDetails = ({ pokemons, setPokemon, loadMoves }) => {
   const params = useParams();

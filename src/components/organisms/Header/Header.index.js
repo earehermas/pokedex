@@ -8,7 +8,7 @@ function Header() {
     <Navbar>
       <Button>
         <Link to="/">Pokédex</Link>
-      </Button>{" "}
+      </Button>
     </Navbar>
   );
 }

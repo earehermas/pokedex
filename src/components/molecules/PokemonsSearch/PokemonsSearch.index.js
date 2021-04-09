@@ -1,11 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { setFilter } from "../../../redux/actions/root";
-import Link from "../../atoms/Link/Link.index";
 import Input from "../../atoms/Input/Input.index";
-import Button from "../../atoms/Button/Button.index";
 
-function PokemonsSearch({ pokemons, setFilter, filter, page }) {
+function PokemonsSearch({ pokemons, setFilter, filter }) {
   const placeholder =
     pokemons.length < 1 ? "First catch some pokemons.." : "Live search..";
 

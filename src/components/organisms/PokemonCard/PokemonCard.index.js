@@ -8,7 +8,6 @@ import Button from "../../atoms/Button/Button.index";
 
 function PokemonCard({
   types,
-  sprite,
   name,
   description,
   fetchDescription,
@@ -20,10 +19,13 @@ function PokemonCard({
   stats,
 }) {
   const params = useParams();
+
   let id = parseInt(params.pokemonId);
+
+  const pokeImage = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+
   let prev = id > 1 ? id - 1 : 1;
   let next = id + 1;
-  console.log("sprite", sprite);
   console.log("stats", stats);
   useEffect(() => {
     fetchDescription(id);
@@ -39,10 +41,11 @@ function PokemonCard({
         {held_items},
         {types
           ? types.map((type, i) => {
-              const name = type.type.name;
-              return <div>{name}</div>;
+              const pokeType = type.type.name;
+              return <div>{pokeType}</div>;
             })
           : ""}
+        <img src={pokeImage} />
       </PokemonContainer>
       <Button>
         <Link to={`/pokemon/${next}`}>next</Link>
@@ -72,7 +75,6 @@ const mapStateToProps = (state) => {
   return {
     id: pk.id,
     types: pk.types,
-    sprite: getSprite(pk.sprites),
     name: pk.name,
     description,
     height: pk.height,
@@ -83,18 +85,5 @@ const mapStateToProps = (state) => {
     stats: pk.stats,
   };
 };
-
-function getSprite(sprites) {
-  console.log("hello", sprites.front_default);
-  const entries = Object.entries(sprites);
-  console.log("entries", entries);
-  const keys = Object.keys(sprites);
-  console.log("keys", keys);
-  const values = Object.values(sprites);
-  console.log("values", values);
-  //   values.map((value) => {
-  //     return console.log("valuee", value);
-  //   });
-}
 
 export default connect(mapStateToProps, { fetchDescription })(PokemonCard);
