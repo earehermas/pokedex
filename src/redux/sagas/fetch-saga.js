@@ -22,14 +22,12 @@ async function fetchAll() {
 
   try {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=150`);
-    console.log("coucou");
     const json = await response.json();
     const arr = json.results;
     return Promise.all(
       arr.map(async (pokemon) => {
         const result = await fetchPokemon(pokemon);
         pokemons.push(result);
-        console.log("COUCOU BORDEL");
       })
     ).then(() => {
       let end = performance.now();
@@ -47,7 +45,6 @@ async function fetchPokemon(pokemon) {
     const response = await fetch(
       `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
     );
-    console.log("COUCOU BORDEL");
     return await response.json();
   } catch (e) {
     throw new Error(`fetching ${pokemon.name}'s details went wrong`);

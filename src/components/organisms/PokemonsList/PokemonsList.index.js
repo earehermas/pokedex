@@ -2,9 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchAll, resetData } from "../../../redux/actions/root";
 import pokeball from "../../../img/pokeball.gif";
-import Card from "../../atoms/Card/Card.index";
-import Link from "../../atoms/Link/Link.index";
 import PokemonPreviewCard from "../../molecules/PokemonPreviewCard/PokemonPreviewCard.index";
+import { ListContainer } from "../../atoms/Container/Container.index";
+
 function PokemonsList({
   fetchAll,
   resetData,
@@ -19,19 +19,17 @@ function PokemonsList({
   return (
     <>
       <div>
+        <button variant="outlined" onClick={fetchAll}>
+          Catch Pokemons
+        </button>
+        <button variant="outlined" onClick={resetData}>
+          Reset
+        </button>
         <div>
-          <button variant="outlined" onClick={fetchAll}>
-            Catch Pokemons
-          </button>
-          <button variant="outlined" onClick={resetData}>
-            Reset
-          </button>
-          <div>
-            {error ? <span>Something bad happened: {error.message}</span> : ""}
-          </div>
+          {error ? <span>Something bad happened: {error.message}</span> : ""}
         </div>
       </div>
-      <div>
+      <ListContainer>
         {loading ? (
           <>
             <img alt={pokeball} src={pokeball}></img>
@@ -45,7 +43,7 @@ function PokemonsList({
             ></PokemonPreviewCard>
           ))
         )}
-      </div>
+      </ListContainer>
     </>
   );
 }
